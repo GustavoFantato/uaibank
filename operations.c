@@ -88,9 +88,7 @@ void run_operation(int operation) // Função que roda a operação selecionada 
 // TODO: OPERAÇÃO 1
 void new_user()  
 {   
-    // char name[];
-    // int idade;
-    // float saldo_atual;
+
     
 }
 
