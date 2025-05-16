@@ -124,18 +124,82 @@ void run_operation(int operation) // Função que roda a operação selecionada 
 
 <<<<<<< HEAD
 // TODO: OPERAÇÃO 1
-void new_user(n[])  // Compensa Por verificação de quantos usuários tem antes?(M) - Sugestão
+void new_user()  
 {   
 
     
+=======
+// OPERAÇÃO 1
+void new_user() // Função que adiciona um novo usuário ao banco de dados -- PRONTA
+{   
+    int newUserId = add_id(); // Cria um novo ID para o usuário
+    
+    users user; // Cria uma variável para armazenar as informações do usuário
+    user.name = malloc(sizeof(char) * NAME_MAX_SIZE); // Define o máximo de caractéres do nome sendo 100
+    if(user.name == NULL)
+    {
+        printf("Sem espaco na memoria.\n");
+        exit(1);
+    }
+    
+    // Imprime para o usuário a operação que ele está realizando
+    printf("\n");
+    printf("=-=-=-=-=-=-=NOVO USUARIO=-=-=-=-=-=-\n");
+
+    // Pede os dados para o usuário e as armazena nas respectivas variáveis do usuário
+    printf("Nome: ");
+    scanf("\n%[^\n]", user.name);
+    printf("Idade: ");
+    scanf("%d", &user.age);
+    printf("Saldo atual: ");
+    scanf("%lf", &user.currency);
+
+    char* databaseName = "database.txt"; // Define o nome do arquivo da base de dados
+    FILE* database = fopen(databaseName, "a"); // Abre a base de dados
+    if(database == NULL)
+    {
+        printf("Nao foi possivel abrir %s", databaseName);
+        exit(2);
+    }
+
+    fprintf(database, "%d '%s' %d %.2lf\n", newUserId, user.name, user.age, user.currency); // Escreve na base de dados os dados do usuários
+
+    fclose(database); // Fecha a base de dados
+
+    // Imprime que a operação foi um sucesso
+    printf("=-=-=-=-=USUARIO %d REGISTADO-=-=-=-=-\n", newUserId);
+    printf("\n");
+
+    return;
+>>>>>>> refs/remotes/origin/main
 }
 
-// TODO: OPERAÇÃO 2
-void new_users()
+// OPERAÇÃO 2
+void new_users() // Função que adiciona vários usuários ao banco de dados -- PRONTA
 {
+<<<<<<< HEAD
     // char name[];
     // int idade;
     // float saldo_atual;
+=======
+    int numberOfUsers; // Cria uma variável para armzenar o número de usuários que serão adicionados
+    
+    // Imprime para o usuário a operação que ele está realizando
+    printf("\n");
+    printf("=-=-=-=-=-=-NOVOS USUARIOS-=-=-=-=-=-\n");
+
+    // Pede ao usuário a quantidade de usuários que devem ser adicionados
+    printf("Quantidade de usuarios: ");
+    scanf("%d", &numberOfUsers);
+
+    // Adiciona 'numberOfUsers' usuários novos
+    for(int i = 0; i < numberOfUsers; i++)
+    {
+        new_user();
+    }
+
+    return;
+>>>>>>> refs/remotes/origin/main
 }
 
 // TODO: OPERAÇÃO 3
