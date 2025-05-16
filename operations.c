@@ -122,13 +122,6 @@ void run_operation(int operation) // Função que roda a operação selecionada 
     return;
 }
 
-<<<<<<< HEAD
-// TODO: OPERAÇÃO 1
-void new_user()  
-{   
-
-    
-=======
 // OPERAÇÃO 1
 void new_user() // Função que adiciona um novo usuário ao banco de dados -- PRONTA
 {   
@@ -171,17 +164,11 @@ void new_user() // Função que adiciona um novo usuário ao banco de dados -- P
     printf("\n");
 
     return;
->>>>>>> refs/remotes/origin/main
 }
 
 // OPERAÇÃO 2
 void new_users() // Função que adiciona vários usuários ao banco de dados -- PRONTA
 {
-<<<<<<< HEAD
-    // char name[];
-    // int idade;
-    // float saldo_atual;
-=======
     int numberOfUsers; // Cria uma variável para armzenar o número de usuários que serão adicionados
     
     // Imprime para o usuário a operação que ele está realizando
@@ -199,7 +186,6 @@ void new_users() // Função que adiciona vários usuários ao banco de dados --
     }
 
     return;
->>>>>>> refs/remotes/origin/main
 }
 
 // TODO: OPERAÇÃO 3
